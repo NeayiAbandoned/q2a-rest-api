@@ -13,6 +13,7 @@
 	include 'login.php';
 	include 'update-profile.php';
 	include 'get-questions.php';
+	include 'get-question-detail.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -37,6 +38,11 @@
 		}
 		break;
 
+		case 'GETQUESTIONDETAIL':{
+			get_question_detail($json_request);
+		}
+		break;
+		
 		default:{
 				echo '{"responseHeader"	:	{
 							"serviceId": "'.$serviceId.'",
