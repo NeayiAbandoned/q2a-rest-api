@@ -11,6 +11,8 @@
 	define("Q2ALOCATION", "../q2a");
 
 	include 'login.php';
+	include 'update-profile.php';
+	include 'get-questions.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -20,14 +22,22 @@
 
 	switch ($interactionCode) {
 
-		case 'LOGIN':
-			{
-				login($json_request);
-			}	
-			break;
+		case 'LOGIN':{
+			login($json_request);
+		}	
+		break;
+		
+		case 'UPDATEPROFILE':{
+			updateprofile($json_request);
+		}
+		break;
 
-		default:
-			{
+		case 'GETQUESTIONS':{
+			get_questions($json_request);
+		}
+		break;
+
+		default:{
 				echo '{"responseHeader"	:	{
 							"serviceId": "'.$serviceId.'",
 							"status": "405",
