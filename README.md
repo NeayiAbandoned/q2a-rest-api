@@ -27,7 +27,7 @@ Sample Output
 
 
 GET QUESTION DETAIL API
-----------------------
+-----------------------
 
 Gets the answers to a specific question.
 
@@ -38,4 +38,18 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"answers":[{"title":null,"postid":"9","acount":"0","views":"0","tags":null,"content":"Answer2 on the test question","netvotes":"0","updated":null,"created":"1497697943"},{"title":null,"postid":"2","acount":"0","views":"0","tags":null,"content":"answer test test","netvotes":"0","updated":null,"created":"1497455825"}]}}
+
+
+CREATE QUESTION API
+--------------------
+
+Creates a question for then loggedin user and returns the post id. if a user is not logged in, returns an error.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"CREATEQUESTION"}, "requestBody" : { "title" : "One test", "content" : "test content", "tags" : "tag1, tag2" }}
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200","message":"Question Added"},"responseBody":{"userid":"16","postid":15}}
 

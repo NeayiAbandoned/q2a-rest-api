@@ -12,6 +12,7 @@
 	include 'update-profile.php';
 	include 'get-questions.php';
 	include 'get-question-detail.php';
+	include 'create-question.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -38,6 +39,11 @@
 
 		case 'GETQUESTIONDETAIL':{
 			get_question_detail($json_request);
+		}
+		break;
+
+		case 'CREATEQUESTION':{
+			create_question($json_request);
 		}
 		break;
 		
