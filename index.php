@@ -7,9 +7,7 @@
 	//	15th June 2017
 	//
 	
-	//Q2A Location on server
-	define("Q2ALOCATION", "../q2a");
-
+	include 'settings.php';
 	include 'login.php';
 	include 'update-profile.php';
 	include 'get-questions.php';

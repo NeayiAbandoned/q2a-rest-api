@@ -20,7 +20,7 @@
 
 	$serviceId	= $json_request['requestHeader']['serviceId'];
 
-		$sql_get_questions = "SELECT title, userid, postid, acount, views, content, tags, netvotes, UNIX_TIMESTAMP(updated) as updated, UNIX_TIMESTAMP(created) as created FROM qa_posts WHERE type='Q' and NOT(type='Q_HIDDEN') ORDER BY created DESC LIMIT 20;";
+		$sql_get_questions = "SELECT title, userid, postid, acount, views, content, tags, netvotes, UNIX_TIMESTAMP(updated) as updated, UNIX_TIMESTAMP(created) as created FROM ".TABLEPREFIX."posts WHERE type='Q' and NOT(type='Q_HIDDEN') ORDER BY created DESC LIMIT 20;";
 		$result_get_questions = $conn->query($sql_get_questions);
 		
 		while($row_get_questions= $result_get_questions->fetch_assoc()) {
