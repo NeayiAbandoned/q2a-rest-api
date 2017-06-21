@@ -53,3 +53,15 @@ Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200","message":"Question Added"},"responseBody":{"userid":"16","postid":15}}
 
+WRITE ANSWER API
+-----------------
+
+Write an answer to a question for the loggedin user and returns the post id. if a user is not logged in, returns an error.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"WRITEANSWER"}, "requestBody" : { "content" : "test content", "parentpostid" : "1" }}
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200","message":"Question Added"},"responseBody":{"userid":17,"postid":19}}
