@@ -12,7 +12,7 @@
 	// { "requestHeader": { "serviceId":"111", "interactionCode":"LOGIN" }, "requestBody" : { "email" : "anoop@helloinfinity.com", "identifier" : "akm1kskdjbgasane", "username" : "anoopanson", "source" : "facebook" } }
 
 	//	Sample Output
-	//	{"responseHeader":{"serviceId":"111","status":"200","username":"14","message":"User Logged in"}}
+	//	{"responseHeader":{"serviceId":"111","status":"200","message":"User Logged in"},"responseBody":{"username":"anoopanson","userid":"4"}}
 
 	function login($json_request){
 
@@ -30,6 +30,7 @@
 		qa_log_in_external_user($source, $identifier, $fields);
 
 		$logged_in_user = qa_get_logged_in_handle();
+		$logged_in_user_id = qa_get_logged_in_userid();
 
 		if ($logged_in_user != null) {
 
@@ -38,6 +39,7 @@
 			$res['responseHeader']['status'] = "200"; 
 			$res['responseHeader']['message'] = "User Logged in";
 			$res['responseBody']['username'] = $logged_in_user;
+			$res['responseBody']['userid'] = $logged_in_user_id;
 		}else{
 
 			//error

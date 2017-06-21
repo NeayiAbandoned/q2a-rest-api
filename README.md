@@ -9,7 +9,7 @@ Sample Input
 
 Sample Output
 
-{"responseHeader":{"serviceId":"111","status":"200","message":"User Logged in"},"responseBody":{"username":"anoopanson"}}
+{"responseHeader":{"serviceId":"111","status":"200","message":"User Logged in"},"responseBody":{"username":"anoopanson","userid":"4"}}
 
 
 GET QUESTIONS API
