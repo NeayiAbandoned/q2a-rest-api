@@ -65,3 +65,16 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200","message":"Question Added"},"responseBody":{"userid":17,"postid":19}}
+
+WRITE COMMENT API
+------------------
+
+Write a comment to an answer for the loggedin user and returns the post id. if a user is not logged in, returns an error.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"WRITECOMMENT"}, "requestBody" : { "content" : "test content", "parentpostid" : "1" }}
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200","message":"Answer added"},"responseBody":{"userid":"17","postid":22}}
