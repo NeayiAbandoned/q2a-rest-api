@@ -47,7 +47,7 @@ Creates a question for then loggedin user and returns the post id. if a user is 
 
 Sample Input
 
-{ "requestHeader": { "serviceId":"111", "interactionCode":"CREATEQUESTION"}, "requestBody" : { "title" : "One test", "content" : "test content", "tags" : "tag1, tag2" }}
+{ "requestHeader": { "serviceId":"111", "interactionCode":"CREATEQUESTION"}, "requestBody" : { "userid" : "1", "title" : "One test", "content" : "test content", "tags" : "tag1, tag2" }}
 
 Sample Output
 
@@ -60,7 +60,7 @@ Write an answer to a question for the loggedin user and returns the post id. if 
 
 Sample Input
 
-{ "requestHeader": { "serviceId":"111", "interactionCode":"WRITEANSWER"}, "requestBody" : { "content" : "test content", "parentpostid" : "1" }}
+{ "requestHeader": { "serviceId":"111", "interactionCode":"WRITEANSWER"}, "requestBody" : { "userid" : "1", "content" : "test content", "parentpostid" : "1" }}
 
 Sample Output
 
@@ -73,7 +73,7 @@ Write a comment to an answer for the loggedin user and returns the post id. if a
 
 Sample Input
 
-{ "requestHeader": { "serviceId":"111", "interactionCode":"WRITECOMMENT"}, "requestBody" : { "content" : "test content", "parentpostid" : "1" }}
+{ "requestHeader": { "serviceId":"111", "interactionCode":"WRITECOMMENT"}, "requestBody" : { "userid" : "1", "content" : "test content", "parentpostid" : "1" }}
 
 Sample Output
 
