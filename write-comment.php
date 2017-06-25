@@ -9,7 +9,7 @@
 	// 	Write a comment to an answer for the loggedin user and returns the post id. if a user is not logged in, returns an error.
 
 	// 	Sample Input
-	// { "requestHeader": { "serviceId":"111", "interactionCode":"WRITECOMMENT"}, "requestBody" : { "content" : "test content", "parentpostid" : "1" }}
+	// { "requestHeader": { "serviceId":"111", "interactionCode":"WRITECOMMENT"}, "requestBody" : { "userid" : "2", "content" : "test content", "parentpostid" : "1" }}
 
 	// 	Sample Output
 	// 	{"responseHeader":{"serviceId":"111","status":"200","message":"Answer added"},"responseBody":{"userid":"17","postid":22}}
@@ -26,8 +26,8 @@
 		$format = '';
 		$title = '';
 		$tags = '';
-		$userid = qa_get_logged_in_userid();
-		
+
+		$userid = $json_request['requestBody']['userid'];
 		$parentpostid = $json_request['requestBody']['parentpostid'];
 		$content = $json_request['requestBody']['content'];
 
