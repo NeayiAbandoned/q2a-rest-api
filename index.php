@@ -15,6 +15,7 @@
 	include 'create-question.php';
 	include 'write-answer.php';
 	include 'write-comment.php';
+	include 'update-post.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -56,6 +57,11 @@
 
 		case 'WRITECOMMENT':{
 			write_comment($json_request);
+		}
+		break;
+
+		case 'UPDATEPOST':{
+			update_post($json_request);
 		}
 		break;
 		
