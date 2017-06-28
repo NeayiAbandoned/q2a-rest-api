@@ -4,15 +4,15 @@
 	//	Question2Answer API
 	//	Author : Arun Anson
 	//	Copyright (c) 2017 Hello Infinity Business Solutions Pvt. Ltd.
-	//	16th June 2017
-	//	Profile Update API
-	//
+	//	29th June 2017
+	// Profile Update API
+	// Updates the user's email, location, fullname and avatar against a specified user_id. if the user_id is not specified, the API shows an error.
 
-	//	Sample Input
-	// { "requestHeader": { "serviceId":"111", "interactionCode":"UPDATEPROFILE" }, "requestBody" : { "user_id" : "1", "email_id" : "anoop@helloinfinity.com", "location" : "alappuzha", "full_name" : "Arun Anson", "avatar" : "akm1kskdjbgasane"} }
+	// 	Sample Input
+	// { "requestHeader": { "serviceId":"111", "interactionCode":"UPDATEPROFILE" }, "requestBody" : { "user_id" : "1", "email_id" : "anoop@helloinfinity.com", "location" : "alappuzha", "full_name" : "Anoop Anson", "avatar" : "avatar-here"} }
 
-	//	Sample Output
-	//	{"responseHeader":{"serviceId":"111","status":"200","username":"14","message":"User Logged in"}}
+	// 	Sample Output
+	// 	{"responseHeader":{"status":"200","serviceId":"111","message":"Updated!"}}
 	
 	function updateprofile($json_request){
 

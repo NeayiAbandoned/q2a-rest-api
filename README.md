@@ -78,3 +78,16 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200","message":"Answer added"},"responseBody":{"userid":"17","postid":22}}
+
+UPDATE PROFILE API
+--------------------
+
+Updates the user's email, location, fullname and avatar against a specified user_id. if the user_id is not specified, the API shows an error.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"UPDATEPROFILE" }, "requestBody" : { "user_id" : "1", "email_id" : "anoop@helloinfinity.com", "location" : "alappuzha", "full_name" : "Anoop Anson", "avatar" : "avatar-here"} }
+
+Sample Output
+
+{"responseHeader":{"status":"200","serviceId":"111","message":"Updated!"}}
