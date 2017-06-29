@@ -91,3 +91,17 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"status":"200","serviceId":"111","message":"Updated!"}}
+
+
+VIEW PROFILE API
+-----------------
+
+View user's FullName, Username, Email, Location and avatar when userid is passed as an argument.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"VIEWPROFILE" }, "requestBody" : { "user_id" : "1" } }
+
+Sample Output
+
+{"responseBody":{"user_fullname":"Anoop Anson","user_location":"alappuzha","user_name":"admin","user_email":"anoop@helloinfinity.com","user_avatarurl":"http://renalbiomed.com/api/avatar/1.png"},"responseHeader":{"status":"200","serviceId":"111","message":"Success"}}

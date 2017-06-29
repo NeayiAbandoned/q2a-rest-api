@@ -12,7 +12,7 @@
 	// { "requestHeader": { "serviceId":"111", "interactionCode":"VIEWPROFILE" }, "requestBody" : { "user_id" : "1" } }
 
 	// 	Sample Output
-	// 	{"responseHeader":{"status":"200","serviceId":"111"}, "responseBody" : { "fullname" : "Arun Anson", "username" : "arunanson", "email" : "arun@helloinfinity.com", "location" : "alappuzha", "avatar" : "image-url" }}
+	// 	{"responseBody":{"user_fullname":"Anoop Anson","user_location":"alappuzha","user_name":"admin","user_email":"anoop@helloinfinity.com","user_avatarurl":"http://renalbiomed.com/api/avatar/1.png"},"responseHeader":{"status":"200","serviceId":"111","message":"Success"}}
 	
 	function view_profile($json_request){
 
