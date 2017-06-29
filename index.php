@@ -16,6 +16,7 @@
 	include 'write-answer.php';
 	include 'write-comment.php';
 	include 'update-post.php';
+	include 'view-profile.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -62,6 +63,11 @@
 
 		case 'UPDATEPOST':{
 			update_post($json_request);
+		}
+		break;
+
+		case 'VIEWPROFILE':{
+			view_profile($json_request);
 		}
 		break;
 		
