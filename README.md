@@ -107,7 +107,7 @@ Sample Output
 {"responseBody":{"user_fullname":"Anoop Anson","user_location":"alappuzha","user_name":"admin","user_email":"anoop@helloinfinity.com","user_avatarurl":"http://renalbiomed.com/api/avatar/1.png"},"responseHeader":{"status":"200","serviceId":"111","message":"Success"}}
 
 
-GET QUESTIONS API
+UPDATE POST API
 ------------------
 Update QUESTION, ANSWER, COMMENT or any other post type using postid
 

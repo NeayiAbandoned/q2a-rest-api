@@ -4,8 +4,8 @@
 	//	Question2Answer API
 	//	Author : Arun Anson
 	//	Copyright (c) 2017 Hello Infinity Business Solutions Pvt. Ltd.
-	//	17th June 2017
-	// 	GET QUESTIONS API
+	//	3rd July 2017
+	// 	UPDATE POST API
 	// 	Update QUESTION, ANSWER, COMMENT or any other post type using postid
 
 	// 	Sample Input
