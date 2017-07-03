@@ -105,3 +105,16 @@ Sample Input
 Sample Output
 
 {"responseBody":{"user_fullname":"Anoop Anson","user_location":"alappuzha","user_name":"admin","user_email":"anoop@helloinfinity.com","user_avatarurl":"http://renalbiomed.com/api/avatar/1.png"},"responseHeader":{"status":"200","serviceId":"111","message":"Success"}}
+
+
+GET QUESTIONS API
+------------------
+Update QUESTION, ANSWER, COMMENT or any other post type using postid
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"UPDATEPOST"}, "requestBody" : { "postid" : "1", "postitle" : "update post title", "postcontent" : "update content", "posttags" : "tag1 update, tag2 update" }}
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"message":"Successfully updated!"}}
