@@ -108,7 +108,7 @@ Sample Output
 
 
 UPDATE POST API
-------------------
+-----------------
 Update QUESTION, ANSWER, COMMENT or any other post type using postid
 
 Sample Input
@@ -118,3 +118,16 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"message":"Successfully updated!"}}
+
+
+DELETE POST API
+----------------
+Delete QUESTION, ANSWER, COMMENT or any other post type using postid.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"DELETEPOST"}, "requestBody" : { "postid" : "27" }}
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"message":"Successfully deleted!"}}
