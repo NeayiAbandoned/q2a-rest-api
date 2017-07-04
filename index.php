@@ -18,6 +18,7 @@
 	include 'update-post.php';
 	include 'view-profile.php';
 	include 'delete-post.php';
+	include 'vote.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -74,6 +75,11 @@
 
 		case 'DELETEPOST':{
 			delete_post($json_request);
+		}
+		break;
+
+		case 'VOTE':{
+			vote($json_request);
 		}
 		break;
 		

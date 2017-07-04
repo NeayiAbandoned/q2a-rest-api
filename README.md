@@ -131,3 +131,15 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"message":"Successfully deleted!"}}
+
+Voting API
+-----------
+Upvote or downvote a question. To upvote, specify 'vote' value as '1' and to downvote, specify 'vote' value as '0'
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"VOTE" }, "requestBody" : { "userid" : "1", "postid" : "1", "vote" : "1" } }
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200","message":"User Logged in"},"responseBody":{"username":"anoopanson","userid":"4"}}
