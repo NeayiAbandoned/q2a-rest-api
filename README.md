@@ -143,3 +143,15 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200","message":"User Logged in"},"responseBody":{"username":"anoopanson","userid":"4"}}
+
+Search API
+-----------
+Find questions with occurance of the given string
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"SEARCH" }, "requestBody" : { "inquery" : "test", "count" : "21", "userid" : "1" } }
+
+Sample Output
+
+{"responseHeader":{"serviceId":null,"status":"200"},"responseBody":{"posts":"1,15,13"}}

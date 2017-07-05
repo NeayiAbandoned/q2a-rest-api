@@ -19,6 +19,7 @@
 	include 'view-profile.php';
 	include 'delete-post.php';
 	include 'vote.php';
+	include 'search.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -82,7 +83,12 @@
 			vote($json_request);
 		}
 		break;
-		
+
+		case 'SEARCH':{
+			search($json_request);
+		}
+		break;
+
 		default:{
 				echo '{"responseHeader"	:	{
 							"serviceId": "'.$serviceId.'",
