@@ -21,7 +21,7 @@
 	$serviceId	= $json_request['requestHeader']['serviceId'];
 	$questionid = $json_request['requestBody']['questionid'];
 
-		$sql_get_question = "SELECT title, acount, views, tags, content, netvotes, UNIX_TIMESTAMP(updated) as updated, UNIX_TIMESTAMP(created) as created FROM qa_posts WHERE type='Q' and postid='1' ORDER BY created DESC LIMIT 20;";
+		$sql_get_question = "SELECT title, acount, views, tags, content, netvotes, UNIX_TIMESTAMP(updated) as updated, UNIX_TIMESTAMP(created) as created FROM ".TABLEPREFIX."posts WHERE type='Q' and postid='".$questionid."' ORDER BY created DESC LIMIT 20;";
 		$result_get_question = $conn->query($sql_get_question);
 
 		while($row_get_question = $result_get_question->fetch_assoc()) {
