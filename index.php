@@ -21,6 +21,7 @@
 	include 'vote.php';
 	include 'search.php';
 	include 'check-vote.php';
+	include 'get-user-questions.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -92,6 +93,11 @@
 
 		case 'CHECKVOTE':{
 			check_vote($json_request);
+		}
+		break;
+
+		case 'GETUSERQUESTIONS':{
+			get_user_questions($json_request);
 		}
 		break;
 

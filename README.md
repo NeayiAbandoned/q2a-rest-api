@@ -167,3 +167,15 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"status":"204","serviceId":"111","message":"User hasn't voted for this post"}}
+
+GET USER QUESTIONS API
+----------------------
+Gets all of the questions and its details created by a specific user in order they are posted.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"GETUSERQUESTIONS", "user_id" : "1" }}
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"questions":[{"title":"How many movies have the RED Camera been used?","userid":"1","postid":"8","acount":"0","views":"1","content":"In total, worldwide, how many movies have the camera RED been used?","tags":"movie,camera","netvotes":"0","updated":null,"created":"1497696372"},{"title":"23post title to update","userid":"1","postid":"5","acount":"1","views":"1","content":"post content to update","tags":"tag1, tag2","netvotes":"0","updated":null,"created":"1497694735"},{"title":"update post title","userid":"1","postid":"1","acount":"7","views":"1","content":"update content","tags":"tag1 update, tag2 update1","netvotes":"1","updated":null,"created":"1497455725"}]}}
