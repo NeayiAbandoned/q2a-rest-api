@@ -155,3 +155,15 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":null,"status":"200"},"responseBody":{"result":[{"title":"update post title","postid":"1","userid":"1","acount":"7","views":"1","tags":"tag1 update, tag2 update","netvotes":"1","created":"1497455725"},{"title":"One test","postid":"15","userid":"16","acount":"0","views":"1","tags":"tag1,tag2","netvotes":"0","created":"1498039876"},{"title":"One test","postid":"13","userid":"16","acount":"0","views":"1","tags":"tag1,tag2","netvotes":"0","created":"1498039537"},{"title":"test one","postid":"11","userid":"16","acount":"0","views":"1","tags":"test1","netvotes":"0","created":"1498039316"},{"title":"One test","postid":"14","userid":"16","acount":"0","views":"0","tags":"tag1,tag2","netvotes":"0","created":"1498039791"},{"title":"One test","postid":"12","userid":"16","acount":"0","views":"0","tags":"","netvotes":"0","created":"1498039467"}]}}
+
+CHECK VOTE API
+---------------
+Check if a user has voted for a specific postid. if voted, return stats.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"CHECKVOTE" }, "requestBody" : { "user_id" : "1", "post_id" : "21" } }
+
+Sample Output
+
+{"responseHeader":{"status":"204","serviceId":"111","message":"User hasn't voted for this post"}}

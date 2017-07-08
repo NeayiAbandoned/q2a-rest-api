@@ -20,6 +20,7 @@
 	include 'delete-post.php';
 	include 'vote.php';
 	include 'search.php';
+	include 'check-vote.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -86,6 +87,11 @@
 
 		case 'SEARCH':{
 			search($json_request);
+		}
+		break;
+
+		case 'CHECKVOTE':{
+			check_vote($json_request);
 		}
 		break;
 
