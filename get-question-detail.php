@@ -50,7 +50,8 @@
 
 			//error
 			$res['responseHeader']['serviceId'] = $serviceId;
-			$res['responseHeader']['status'] = "401"; 
+			$res['responseHeader']['status'] = "401";
+			$res['responseBody']['question'] = $data_get_question;
 			$res['responseHeader']['message'] = "There are no answers to the specified question";
 		}
 
