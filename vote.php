@@ -24,7 +24,7 @@
 		$serviceId	= $json_request['requestHeader']['serviceId'];
 		
 		$userid = $json_request['requestBody']['userid'];
-		$postid = $json_request['requestBody']['postid'];
+		$postid['postid'] = $json_request['requestBody']['postid'];
 		$vote = $json_request['requestBody']['vote'];
 
 		$handle_array = qa_db_user_get_userid_handles($userid);
