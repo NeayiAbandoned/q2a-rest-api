@@ -22,6 +22,7 @@
 	include 'search.php';
 	include 'check-vote.php';
 	include 'get-user-questions.php';
+	include 'get-tags.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -98,6 +99,11 @@
 
 		case 'GETUSERQUESTIONS':{
 			get_user_questions($json_request);
+		}
+		break;
+
+		case 'GETTAGS':{
+			get_tags($json_request);
 		}
 		break;
 

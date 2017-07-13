@@ -179,3 +179,13 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"questions":[{"title":"How many movies have the RED Camera been used?","userid":"1","postid":"8","acount":"0","views":"1","content":"In total, worldwide, how many movies have the camera RED been used?","tags":"movie,camera","netvotes":"0","updated":null,"created":"1497696372"},{"title":"23post title to update","userid":"1","postid":"5","acount":"1","views":"1","content":"post content to update","tags":"tag1, tag2","netvotes":"0","updated":null,"created":"1497694735"},{"title":"update post title","userid":"1","postid":"1","acount":"7","views":"1","content":"update content","tags":"tag1 update, tag2 update1","netvotes":"1","updated":null,"created":"1497455725"}]}}
+
+GET TAGS API
+--------------------
+Get tag suggestions like the one user entered
+
+Sample Input
+{ "requestHeader": { "serviceId":"111", "interactionCode":"GETTAGS"}, "requestBody" : { "keyword" : "ag" }}
+
+Sample Output
+{"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"questions":[{"wordid":"54","word":"tag2","titlecount":"0","contentcount":"0","tagwordcount":"4","tagcount":"4"},{"wordid":"53","word":"tag1","titlecount":"0","contentcount":"0","tagwordcount":"4","tagcount":"4"}]}}
