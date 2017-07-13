@@ -33,12 +33,11 @@ Gets the question and answers to a specific question.
 
 Sample Input
 
-{ "requestHeader": { "serviceId":"111", "interactionCode":"GETQUESTIONDETAIL"}, "requestBody" : { "questionid" : "1" }}
+{ "requestHeader": { "serviceId":"111", "interactionCode":"GETQUESTIONDETAIL"}, "requestBody" : { "questionid" : "1", "user_id" : "user" }}
 
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"question":[{"title":"update post title","acount":"7","views":"1","tags":"tag1 update, tag2 update1","content":"update content","netvotes":"1","updated":null,"created":"1497455725"}],"answers":[{"title":null,"postid":"20","acount":"0","views":"0","tags":null,"content":"?one ?one ?one ?one ?one ?one ?one ?one","netvotes":"0","updated":null,"created":"1498057104"},{"title":null,"postid":"19","acount":"0","views":"0","tags":null,"content":"here goes an another another answer","netvotes":"0","updated":null,"created":"1498056816"},{"title":null,"postid":"18","acount":"0","views":"0","tags":null,"content":"here goes an another answer","netvotes":"0","updated":null,"created":"1498056770"},{"title":null,"postid":"17","acount":"0","views":"0","tags":null,"content":"here goes an answer","netvotes":"0","updated":null,"created":"1498056746"},{"title":null,"postid":"16","acount":"0","views":"0","tags":null,"content":"answer test content","netvotes":"0","updated":null,"created":"1498056517"},{"title":null,"postid":"9","acount":"0","views":"0","tags":null,"content":"Answer2 on the test question","netvotes":"0","updated":null,"created":"1497697943"},{"title":null,"postid":"2","acount":"0","views":"0","tags":null,"content":"answer test test","netvotes":"1","updated":null,"created":"1497455825"}]}}
-
 
 CREATE QUESTION API
 --------------------
