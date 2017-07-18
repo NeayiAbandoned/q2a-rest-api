@@ -23,6 +23,8 @@
 	include 'check-vote.php';
 	include 'get-user-questions.php';
 	include 'get-tags.php';
+	include 'set-best-answer.php';
+	include 'save-image.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -104,6 +106,16 @@
 
 		case 'GETTAGS':{
 			get_tags($json_request);
+		}
+		break;
+
+		case 'SETBESTANSWER':{
+			set_best_answer($json_request);
+		}
+		break;
+
+		case 'SAVEIMAGE':{
+			save_image($json_request);
 		}
 		break;
 
