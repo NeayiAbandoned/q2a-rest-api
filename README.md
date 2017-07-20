@@ -15,7 +15,7 @@ Sample Output
 GET QUESTIONS API
 ------------------
 
-Gets all of the questions and its basic details in order they are posted.
+Gets all of the questions and its details in order they are posted.
 
 Sample Input
 
@@ -23,7 +23,7 @@ Sample Input
 
 Sample Output
 
-{"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"questions":[{"title":"what is the name of sandra bullock's first movie?","userid":"1","postid":"5","acount":"0","views":"1","content":"What is the name of popular hollywood actress sandra bullock's first movie?","tags":"movie,hollywood","netvotes":"0","updated":null,"created":"1497694735"},{"title":"Test question.","userid":"1","postid":"1","acount":"1","views":"1","content":"this is a test question to get answers for API test purpose.","tags":"test,test2","netvotes":"0","updated":null,"created":"1497455725"}]}}
+{"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"questions":[{"title":"question with image test","userid":"1","postid":"27","acount":"0","views":"1","content":"<p><img alt=\"\" src=\"https://www.w3schools.com/css/img_fjords.jpg\" style=\"height:400px; width:600px\">image goes here with text</p>","tags":"image","netvotes":"0","updated":null,"created":"1500354649","favorite":"27"},{"title":"Question title1","userid":"17","postid":"21","acount":"1","views":"1","content":"Question content","tags":"tag1,tag2","netvotes":"0","updated":null,"created":"1498057186","favorite":null},{"title":"One test","userid":"16","postid":"15","acount":"0","views":"1","content":"test content","tags":"tag1,tag2","netvotes":"0","updated":null,"created":"1498039876","favorite":null},{"title":"One test","userid":"16","postid":"14","acount":"0","views":"1","content":"test content","tags":"tag1,tag2","netvotes":"0","updated":null,"created":"1498039791","favorite":null},{"title":"One test","userid":"16","postid":"13","acount":"0","views":"1","content":"test content","tags":"tag1,tag2","netvotes":"0","updated":null,"created":"1498039537","favorite":null},{"title":"One test","userid":"16","postid":"12","acount":"0","views":"0","content":null,"tags":"","netvotes":"0","updated":null,"created":"1498039467","favorite":null},{"title":"test one","userid":"16","postid":"11","acount":"0","views":"1","content":"test content","tags":"test1","netvotes":"0","updated":null,"created":"1498039316","favorite":null},{"title":"How many movies have the RED Camera been used?","userid":"1","postid":"8","acount":"0","views":"1","content":"In total, worldwide, how many movies have the camera RED been used?","tags":"movie,camera","netvotes":"-2","updated":null,"created":"1497696372","favorite":null},{"title":"23post title to update","userid":"1","postid":"5","acount":"1","views":"1","content":"post content to update","tags":"tag1, tag2","netvotes":"0","updated":null,"created":"1497694735","favorite":null},{"title":"update post title","userid":"1","postid":"1","acount":"7","views":"1","content":"update content","tags":"tag1 update, tag2 update1","netvotes":"-1","updated":null,"created":"1497455725","favorite":"1"}]}}
 
 
 GET QUESTION DETAIL API
@@ -108,6 +108,7 @@ Sample Output
 
 UPDATE POST API
 -----------------
+
 Update QUESTION, ANSWER, COMMENT or any other post type using postid
 
 Sample Input
@@ -121,6 +122,7 @@ Sample Output
 
 DELETE POST API
 ----------------
+
 Delete QUESTION, ANSWER, COMMENT or any other post type using postid.
 
 Sample Input
@@ -133,6 +135,7 @@ Sample Output
 
 Voting API
 -----------
+
 Upvote or downvote a question. To upvote, specify 'vote' value as '1' and to downvote, specify 'vote' value as '0'
 
 Sample Input
@@ -145,7 +148,8 @@ Sample Output
 
 Search API
 -----------
-Find questions with occurance of the given string
+
+Find questions with occurance of the given string.
 
 Sample Input
 
@@ -157,6 +161,7 @@ Sample Output
 
 CHECK VOTE API
 ---------------
+
 Check if a user has voted for a specific postid. if voted, return stats.
 
 Sample Input
@@ -169,6 +174,7 @@ Sample Output
 
 GET USER QUESTIONS API
 ----------------------
+
 Gets all of the questions and its details created by a specific user in order they are posted.
 
 Sample Input
@@ -181,7 +187,8 @@ Sample Output
 
 GET TAGS API
 --------------------
-Get tag suggestions like the one user entered
+
+Get tag suggestions like the one user entered.
 
 Sample Input
 
@@ -193,7 +200,8 @@ Sample Output
 
 SET BEST ANSWER API
 --------------------
-Set best answer amoung the existing answers
+
+Set best answer amoung the existing answers.
 
 Sample Input
 
@@ -205,6 +213,7 @@ Sample Output
 
 SAVE IMAGE API
 ----------------
+
 Save images to server and return a url.
 
 Sample Input
@@ -217,6 +226,7 @@ Sample Output
 
 FAVORITE SET/CLEAR API
 -----------------------
+
 Sets/clears a post item as favorite.
 
 Sample Input
