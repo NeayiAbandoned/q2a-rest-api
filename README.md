@@ -184,9 +184,11 @@ GET TAGS API
 Get tag suggestions like the one user entered
 
 Sample Input
+
 { "requestHeader": { "serviceId":"111", "interactionCode":"GETTAGS"}, "requestBody" : { "keyword" : "ag" }}
 
 Sample Output
+
 {"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"questions":[{"wordid":"54","word":"tag2","titlecount":"0","contentcount":"0","tagwordcount":"4","tagcount":"4"},{"wordid":"53","word":"tag1","titlecount":"0","contentcount":"0","tagwordcount":"4","tagcount":"4"}]}}
 
 SET BEST ANSWER API
@@ -194,9 +196,11 @@ SET BEST ANSWER API
 Set best answer amoung the existing answers
 
 Sample Input
+
 { "requestHeader": { "serviceId":"111", "interactionCode":"SETBESTANSWER"}, "requestBody" : { "questionid" : "1", "answerid" : "2", "userid" : "1" }}
 
 Sample Output
+
 {"responseHeader":{"serviceId":"111","status":"200","message":"Success"}}
 
 SAVE IMAGE API
@@ -204,7 +208,21 @@ SAVE IMAGE API
 Save images to server and return a url.
 
 Sample Input
+
 { "requestHeader": { "serviceId":"111", "interactionCode":"SAVEIMAGE"}, "requestBody" : { "base64data" : "1"}}
 
 Sample Output
+
 {"responseHeader":{"serviceId":"111","status":"200","message":"Wrote Image"},"responseBody":{"Url":"http://renalbiomed.com/api/post/G3mRScNF.png"}}
+
+FAVORITE SET/CLEAR API
+-----------------------
+Sets/clears a post item as favorite.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"FAVORITE"}, "requestBody" : { "userid":"1", "posttype" : "Q", "postid" : "27", "favorite" : "1" }}
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200","message":"Favorite Added"}}

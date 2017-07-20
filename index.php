@@ -25,6 +25,7 @@
 	include 'get-tags.php';
 	include 'set-best-answer.php';
 	include 'save-image.php';
+	include 'favorite.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -116,6 +117,11 @@
 
 		case 'SAVEIMAGE':{
 			save_image($json_request);
+		}
+		break;
+
+		case 'FAVORITE':{
+			favorite($json_request);
 		}
 		break;
 
