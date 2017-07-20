@@ -236,3 +236,16 @@ Sample Input
 Sample Output
 
 {"responseHeader":{"serviceId":"111","status":"200","message":"Favorite Added"}}
+
+GET USER FAVORITES API
+-----------------------
+
+Get the user's favourite posts.
+
+Sample Input
+
+{ "requestHeader": { "serviceId":"111", "interactionCode":"GETUSERFAVORITES"}, "requestBody" : { "userid" : "2"}}
+
+Sample Output
+
+{"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"questions":[{"title":"question with image test","userid":"1","postid":"27","acount":"0","views":"1","content":"<p><img alt=\"\" src=\"https://www.w3schools.com/css/img_fjords.jpg\" style=\"height:400px; width:600px\">image goes here with text</p>","tags":"image","netvotes":"0","updated":null,"created":"1500354649","favorite":"1"},{"title":"update post title","userid":"1","postid":"1","acount":"7","views":"1","content":"update content","tags":"tag1 update, tag2 update1","netvotes":"-1","updated":null,"created":"1497455725","favorite":"1"}]}}

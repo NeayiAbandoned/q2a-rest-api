@@ -26,6 +26,7 @@
 	include 'set-best-answer.php';
 	include 'save-image.php';
 	include 'favorite.php';
+	include 'get-user-favorites.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -122,6 +123,11 @@
 
 		case 'FAVORITE':{
 			favorite($json_request);
+		}
+		break;
+
+		case 'GETUSERFAVORITES':{
+			get_user_favorites($json_request);
 		}
 		break;
 
