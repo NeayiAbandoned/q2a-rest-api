@@ -45,8 +45,8 @@
 	        $num_rows = mysqli_num_rows($result_getuserinfo);
 
 	        if ($num_rows != 0) {
-	        	$res['responseBody']['user_fullname'] = $data_getuserinfo[2]["content"];
-				$res['responseBody']['user_location'] = $data_getuserinfo[1]["content"];
+	        	$res['responseBody']['user_fullname'] = $data_getuserinfo[1]["content"];
+				$res['responseBody']['user_location'] = $data_getuserinfo[0]["content"];
 	        }
 
 			$res['responseBody']['user_name'] = $user_name[$user_id];
