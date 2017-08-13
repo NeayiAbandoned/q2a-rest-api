@@ -27,6 +27,8 @@
 	include 'save-image.php';
 	include 'favorite.php';
 	include 'get-user-favorites.php';
+	include 'get-categories.php';
+	include 'get-pages.php';
 
 	//Get JSON Request
 	$json_request = json_decode(file_get_contents('php://input'), true);
@@ -128,6 +130,16 @@
 
 		case 'GETUSERFAVORITES':{
 			get_user_favorites($json_request);
+		}
+		break;
+
+		case 'GETCATEGORIES':{
+			get_categories($json_request);
+		}
+		break;
+
+		case 'GETPAGES':{
+			get_pages($json_request);
 		}
 		break;
 
