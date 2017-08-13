@@ -33,7 +33,7 @@
         }
 
 
-		$sql_get_question_detail = "SELECT title, postid, userid, acount, views, tags, content, netvotes, UNIX_TIMESTAMP(updated) as updated, UNIX_TIMESTAMP(created) as created FROM ".TABLEPREFIX."posts WHERE type='A' and parentid='".$questionid."' ORDER BY created DESC LIMIT 20;";
+		$sql_get_question_detail = "SELECT title, postid, userid, acount, views, tags, content, netvotes, UNIX_TIMESTAMP(updated) as updated, UNIX_TIMESTAMP(created) as created FROM ".TABLEPREFIX."posts WHERE type='A' and parentid='".$questionid."' ORDER BY netvotes DESC;";
 
 		$result_get_question_detail = $conn->query($sql_get_question_detail);
 		
