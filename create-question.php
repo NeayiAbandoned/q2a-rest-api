@@ -9,7 +9,7 @@
 	// 	Creates a question for then loggedin user and returns the post id. if a user is not logged in, returns an error.
 
 	// 	Sample Input
-	// { "requestHeader": { "serviceId":"111", "interactionCode":"CREATEQUESTION"}, "requestBody" : { "userid" : "2", "title" : "One test", "content" : "test content", "tags" : "tag1, tag2" }}
+	// { "requestHeader": { "serviceId":"111", "interactionCode":"CREATEQUESTION"}, "requestBody" : { "userid" : "2", "title" : "One test", "content" : "test content", "categoryid" : "1", "tags" : "tag1, tag2" }}
 
 	// 	Sample Output
 	// 	{"responseHeader":{"serviceId":"111","status":"200","message":"Question Added"},"responseBody":{"userid":"16","postid":15}}
@@ -23,12 +23,12 @@
 
 		$type = 'Q';
 		$parentpostid = null;
-		$categoryid = null;
 		$format = '';
 
 		$userid = $json_request['requestBody']['userid'];
 		$title = $json_request['requestBody']['title'];
 		$content = $json_request['requestBody']['content'];
+		$categoryid = $json_request['requestBody']['categoryid'];;
 		$tags = $json_request['requestBody']['tags'];
 
 		if ($userid != null) {
