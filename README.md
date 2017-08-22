@@ -113,7 +113,7 @@ Update QUESTION, ANSWER, COMMENT or any other post type using postid
 
 Sample Input
 
-{ "requestHeader": { "serviceId":"111", "interactionCode":"UPDATEPOST"}, "requestBody" : { "postid" : "1", "postitle" : "update post title", "postcontent" : "update content", "posttags" : "tag1 update, tag2 update" }}
+{ "requestHeader": { "serviceId":"111", "interactionCode":"UPDATEPOST"}, "requestBody" : { "postid" : "5", "postitle" : "update post title 5", "postcontent" : "update content5", "posttags" : "tag1 update, tag2 update", "categoryid" : "1" }}
 
 Sample Output
 
