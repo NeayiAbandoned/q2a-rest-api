@@ -18,6 +18,7 @@
 
 		require_once Q2ALOCATION.'/qa-include/qa-base.php';
 		require_once Q2ALOCATION.'/qa-include/app/users.php';
+		include 'connection.php';
 
 		$serviceId	= $json_request['requestHeader']['serviceId'];
 		
@@ -40,6 +41,12 @@
 			$res['responseHeader']['message'] = "User Logged in";
 			$res['responseBody']['username'] = $logged_in_user;
 			$res['responseBody']['userid'] = $logged_in_user_id;
+
+            //add gcm key to database
+            $query_insertgcmkey = "INSERT INTO `gcm_token` (`gcm_id`, `gcm_user`, `gcm_key`) VALUES (NULL, ".$logged_in_user_id.", ".$serviceId." ) ON DUPLICATE KEY UPDATE gcm_user=".$logged_in_user_id.", gcm_key = ".$serviceId." ";
+
+            $result_insertgcmkey = $conn->query($query_insertgcmkey);
+
 		}else{
 
 			//error
