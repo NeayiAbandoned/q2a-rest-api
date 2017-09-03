@@ -43,8 +43,8 @@
 			$res['responseBody']['userid'] = $logged_in_user_id;
 
             //add gcm key to database
-            $query_insertgcmkey = "INSERT INTO `gcm_token` (`gcm_id`, `gcm_user`, `gcm_key`) VALUES (NULL, ".$logged_in_user_id.", ".$serviceId." ) ON DUPLICATE KEY UPDATE gcm_user=".$logged_in_user_id.", gcm_key = ".$serviceId." ";
-
+            $query_insertgcmkey = "INSERT INTO `gcm_token` (`gcm_id`, `gcm_user`, `gcm_key`) VALUES (NULL, ".$logged_in_user_id.", '".$serviceId."' ) ON DUPLICATE KEY UPDATE gcm_user=".$logged_in_user_id.", gcm_key = '".$serviceId."' ";
+            //echo $query_insertgcmkey;
             $result_insertgcmkey = $conn->query($query_insertgcmkey);
 
 		}else{
