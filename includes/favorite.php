@@ -13,16 +13,16 @@
 
 	//	Sample Output
 	//	{"responseHeader":{"serviceId":"111","status":"200","message":"Favorite Added"}}
-	
+
 	function favorite($json_request){
 
-		include 'connection.php';
+		include '../connection.php';
 
 		require_once Q2ALOCATION.'/qa-include/qa-base.php';
 		require_once Q2ALOCATION.'/qa-include/db/users.php';
 		require_once Q2ALOCATION.'/qa-include/app/cookies.php';
 		require_once Q2ALOCATION.'/qa-include/app/favorites.php';
-		
+
 		$serviceId	=	$json_request['requestHeader']['serviceId'];
 		$userid 	=	$json_request['requestBody']['userid'];
 		$entitytype	=	$json_request['requestBody']['posttype'];
@@ -39,16 +39,16 @@
 	    $sql_get_favorite_status = "SELECT * FROM ".TABLEPREFIX."userfavorites WHERE `entityid` = ".$entityid.";";
 
 	    $result_get_favorite_status = $conn->query($sql_get_favorite_status);
-		
+
 
         $num_rows = mysqli_num_rows($result_get_favorite_status);
-        
+
 		if ($num_rows != 0) {
-			
+
 			$message = "Favorite Added";
 			$status = "200";
 		}else{
-			
+
 			$message = "Favorite Removed";
 			$status	= "400";
 		}

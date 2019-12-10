@@ -1,156 +1,131 @@
 <?php
 
-	//
-	//	Question2Answer API
-	//	Author : Arun Anson
-	//	Copyright (c) 2017 Hello Infinity Business Solutions Pvt. Ltd.
-	//	15th June 2017
-	//
-	
-	include 'settings.php';
-	include 'login.php';
-	include 'update-profile.php';
-	include 'get-questions.php';
-	include 'get-question-detail.php';
-	include 'create-question.php';
-	include 'write-answer.php';
-	include 'write-comment.php';
-	include 'update-post.php';
-	include 'view-profile.php';
-	include 'delete-post.php';
-	include 'vote.php';
-	include 'search.php';
-	include 'check-vote.php';
-	include 'get-user-questions.php';
-	include 'get-tags.php';
-	include 'set-best-answer.php';
-	include 'save-image.php';
-	include 'favorite.php';
-	include 'get-user-favorites.php';
-	include 'get-categories.php';
-	include 'get-pages.php';
+//
+//	Question2Answer API
+//	Author : Arun Anson
+//	Copyright (c) 2017 Hello Infinity Business Solutions Pvt. Ltd.
+//	15th June 2017
+//
 
-	//Get JSON Request
-	$json_request = json_decode(file_get_contents('php://input'), true);
+include 'settings.php';
 
-	$interactionCode	= $json_request['requestHeader']['interactionCode'];
-	$serviceId	= $json_request['requestHeader']['serviceId'];
+//Get JSON Request
+$json_request = json_decode(file_get_contents('php://input'), true);
 
-	switch ($interactionCode) {
+$interactionCode = $json_request['requestHeader']['interactionCode'];
+$serviceId = $json_request['requestHeader']['serviceId'];
 
-		case 'LOGIN':{
-			login($json_request);
-		}	
-		break;
-		
-		case 'UPDATEPROFILE':{
-			updateprofile($json_request);
-		}
+switch ($interactionCode)
+{
+	case 'LOGIN':
+		include 'includes/login.php';
+		login($json_request);
 		break;
 
-		case 'GETQUESTIONS':{
-			get_questions($json_request);
-		}
+	case 'UPDATEPROFILE':
+		include 'includes/update-profile.php';
+		updateprofile($json_request);
 		break;
 
-		case 'GETQUESTIONDETAIL':{
-			get_question_detail($json_request);
-		}
+	case 'GETQUESTIONS':
+		include 'includes/get-questions.php';
+		get_questions($json_request);
 		break;
 
-		case 'CREATEQUESTION':{
-			create_question($json_request);
-		}
+	case 'GETQUESTIONDETAIL':
+		include 'includes/get-question-detail.php';
+		get_question_detail($json_request);
 		break;
 
-		case 'WRITEANSWER':{
-			write_answer($json_request);
-		}
+	case 'CREATEQUESTION':
+		include 'includes/create-question.php';
+		create_question($json_request);
 		break;
 
-		case 'WRITECOMMENT':{
-			write_comment($json_request);
-		}
+	case 'WRITEANSWER':
+		include 'includes/write-answer.php';
+		write_answer($json_request);
 		break;
 
-		case 'UPDATEPOST':{
-			update_post($json_request);
-		}
+	case 'WRITECOMMENT':
+		include 'includes/write-comment.php';
+		write_comment($json_request);
 		break;
 
-		case 'VIEWPROFILE':{
-			view_profile($json_request);
-		}
+	case 'UPDATEPOST':
+		include 'includes/update-post.php';
+		update_post($json_request);
 		break;
 
-		case 'DELETEPOST':{
-			delete_post($json_request);
-		}
+	case 'VIEWPROFILE':
+		include 'includes/view-profile.php';
+		view_profile($json_request);
 		break;
 
-		case 'VOTE':{
-			vote($json_request);
-		}
+	case 'DELETEPOST':
+		include 'includes/delete-post.php';
+		delete_post($json_request);
 		break;
 
-		case 'SEARCH':{
-			search($json_request);
-		}
+	case 'VOTE':
+		include 'includes/vote.php';
+		vote($json_request);
 		break;
 
-		case 'CHECKVOTE':{
-			check_vote($json_request);
-		}
+	case 'SEARCH':
+		include 'includes/search.php';
+		search($json_request);
 		break;
 
-		case 'GETUSERQUESTIONS':{
-			get_user_questions($json_request);
-		}
+	case 'CHECKVOTE':
+		include 'includes/check-vote.php';
+		check_vote($json_request);
 		break;
 
-		case 'GETTAGS':{
-			get_tags($json_request);
-		}
+	case 'GETUSERQUESTIONS':
+		include 'includes/get-user-questions.php';
+		get_user_questions($json_request);
 		break;
 
-		case 'SETBESTANSWER':{
-			set_best_answer($json_request);
-		}
+	case 'GETTAGS':
+		include 'includes/get-tags.php';
+		get_tags($json_request);
 		break;
 
-		case 'SAVEIMAGE':{
-			save_image($json_request);
-		}
+	case 'SETBESTANSWER':
+		include 'includes/set-best-answer.php';
+		set_best_answer($json_request);
 		break;
 
-		case 'FAVORITE':{
-			favorite($json_request);
-		}
+	case 'SAVEIMAGE':
+		include 'includes/save-image.php';
+		save_image($json_request);
 		break;
 
-		case 'GETUSERFAVORITES':{
-			get_user_favorites($json_request);
-		}
+	case 'FAVORITE':
+		include 'includes/favorite.php';
+		favorite($json_request);
 		break;
 
-		case 'GETCATEGORIES':{
-			get_categories($json_request);
-		}
+	case 'GETUSERFAVORITES':
+		include 'includes/get-user-favorites.php';
+		get_user_favorites($json_request);
 		break;
 
-		case 'GETPAGES':{
-			get_pages($json_request);
-		}
+	case 'GETCATEGORIES':
+		include 'includes/get-categories.php';
+		get_categories($json_request);
 		break;
 
-		default:{
-				echo '{"responseHeader"	:	{
-							"serviceId": "'.$serviceId.'",
-							"status": "405",
-							"message": "Method Not Allowed"
-						}
-					}';
-			}
-			break;
-	}
-?>
+	case 'GETPAGES':
+		include 'includes/get-pages.php';
+		get_pages($json_request);
+		break;
+
+default:
+	echo '{"responseHeader"	:	{
+		"serviceId": "'.$serviceId.'",
+		"status": "405",
+		"message": "Method Not Allowed" }}';
+	break;
+}

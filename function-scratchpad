@@ -1,6 +1,0 @@
-Function Scratchpad
-
-	// if (qa_get_logged_in_userid() === null)
-	// echo 'not logged in';
-	// else
-	// echo qa_get_logged_in_handle() . '<br>' . qa_get_logged_in_email();

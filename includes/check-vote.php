@@ -13,23 +13,23 @@
 
 	// 	Sample Output
 	// 	{"responseHeader":{"status":"204","serviceId":"111","message":"User hasn't voted for this post"}}
-	
+
 	function check_vote($json_request){
-		
-		include 'connection.php';
-		
+
+		include '../connection.php';
+
 		$serviceId	= $json_request['requestHeader']['serviceId'];
 		$user_id = $json_request['requestBody']['user_id'];
 		$post_id = $json_request['requestBody']['post_id'];
 
 		if ($user_id != '') {
-			
+
 			//If the given userid is a valid one
 
-			
+
 			$sql_getvotes = "SELECT * FROM `".TABLEPREFIX."uservotes` WHERE `postid` = ".$post_id." AND `userid` = ".$user_id." ";
 			$result_getvotes = $conn->query($sql_getvotes);
-		
+
 			while($row_getvotes = $result_getvotes->fetch_assoc()) {
 	            $data_getvotes[] = $row_getvotes;
 	        }
@@ -37,7 +37,7 @@
 	        $num_rows = mysqli_num_rows($result_getvotes);
 
 	        if ($num_rows != 0) {
-				
+
 				//success
 				$message = "The User has already voted for the post";
 				$res['responseHeader']['status'] = "200";
@@ -49,7 +49,7 @@
 	       		$res['responseHeader']['status'] = "204";
 	       		$message = "User hasn't voted for this post";
 	       	}
-			
+
 
 		}else{
 

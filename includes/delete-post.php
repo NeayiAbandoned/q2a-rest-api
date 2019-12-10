@@ -13,10 +13,10 @@
 
 	// 	Sample Output
 	// 	{"responseHeader":{"serviceId":"111","status":"200"},"responseBody":{"message":"Successfully deleted!"}}
-	
+
 	function delete_post($json_request){
 
-		include 'connection.php';
+		include '../connection.php';
 
 		$serviceId	= $json_request['requestHeader']['serviceId'];
 		$postid = $json_request['requestBody']['postid'];
@@ -34,7 +34,7 @@
 		}else{
 
 			//error
-			$status = "401"; 
+			$status = "401";
 			$message = "No posts associated with the id specified.";
 		}
 
