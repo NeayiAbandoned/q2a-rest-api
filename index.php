@@ -10,7 +10,14 @@
 include 'settings.php';
 
 //Get JSON Request
-$json_request = json_decode(file_get_contents('php://input'), true);
+try {
+	$json_request = json_decode(file_get_contents('php://input'), true, 512, JSON_THROW_ON_ERROR);
+} catch (\Throwable $th) {
+	echo '{"responseHeader"	:	{
+		"status": "400",
+		"message": "Malformed JSON" }}';
+	exit();
+}
 
 $interactionCode = $json_request['requestHeader']['interactionCode'];
 $serviceId = $json_request['requestHeader']['serviceId'];

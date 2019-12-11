@@ -1,0 +1,138 @@
+<html lang="fr">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Triple Performance</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../../qa-theme/Donut-theme/css/donut.min.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+            <div class="qa-main col-md-9 col-xs-12 pull-left">
+                <div class="qa-part-q-list">
+                    <div class="qa-q-list">
+
+                    </div> <!-- END qa-q-list -->
+                </div>
+                <div class="qa-suggest-next col-xs-12 text-center clearfix alert" style="position: unset">
+                    Commencer par <a href="./ask">poser une question</a> .
+                </div>
+            </div>
+
+
+
+
+        <div class="row">
+
+
+
+            <div class="col-sm result">
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script>
+        var data = {
+            requestHeader: {
+                interactionCode: 'SEARCH',
+                serviceId: 1
+            },
+            requestBody: {
+                inquery: 'vigne',
+                count: 10,
+                userid: 0
+            }};
+
+            var rootQ2AURL = 'http://localhost/neayi/question2answer/';
+
+            $.ajax({
+                type: "POST",
+                url: rootQ2AURL + "qa-plugin/api/",
+                data: JSON.stringify(data),
+                dataType: "json",
+                contentType: "application/json",
+                success: function( ret )
+                {
+                    var html = '';
+                    ret.responseBody.result.forEach(element => {
+                        var votes = element.netvotes;
+                        if (votes > 0)
+                            votes = '+' + votes;
+
+                        var d = new Date(Number(element.created)*1000);
+                        var options = { month: 'long', day: 'numeric' };
+                        var date = d.toLocaleDateString('fr', options);
+
+                        var tags = '';
+
+                        element.tags.split(',').forEach(tag => {
+                            tags += '<li class="qa-q-item-tag-item"><a href="'+rootQ2AURL+'tag/'+tag+'" class="qa-tag-link">'+tag+'</a></li>';
+                        });
+
+                        html += '<div class="qa-q-list-item row" id="q'+element.postid+'">' +
+                                '<div class="qa-q-item-stats">' +
+                                '<div class="qa-voting qa-voting-net" id="voting_'+element.postid+'">' +
+                                '<div class="qa-vote-buttons qa-vote-buttons-net">' +
+                                '<button title="Cliquez pour voter pour" type="submit" value="+" class="qa-vote-first-button qa-vote-up-button"> <span class="fa fa-chevron-up"></span> </button>' +
+                                '<button title="Cliquez pour voter contre" type="submit" value="–" class="qa-vote-second-button qa-vote-down-button"> <span class="fa fa-chevron-down"></span> </button>' +
+                                '</div>' +
+                                '<div class="qa-vote-count qa-vote-count-net">' +
+                                '<span class="qa-netvote-count">' +
+                                '<span class="qa-netvote-count-data">'+votes+'</span><span class="qa-netvote-count-pad"> vote</span>' +
+                                '</span>' +
+                                '</div>' +
+                                '<div class="qa-vote-clear clearfix">' +
+                                '</div>' +
+                                '</div>' +
+                                '</div>' +
+                                '<div class="qa-q-item-main">' +
+                                '<div class="qa-q-item-title">' +
+                                '<a href="'+element.url+'">'+element.title+'</a>' +
+                                '</div>' +
+                                '<ul id="qa_ai_images_preview"></ul>' +
+                                '<span class="qa-q-item-avatar-meta">' +
+                                '    <span class="qa-q-item-meta">' +
+                                '        <span class="qa-q-item-what">posée</span>' +
+                                '        <span class="qa-q-item-who">' +
+                                '            <span class="qa-q-item-who-pad">par </span>' +
+                                '            <span class="qa-q-item-who-data">'+element.handle+'</span>' +
+                                '            <span class="qa-q-item-who-points">' +
+                                '                <span class="qa-q-item-who-points-pad">(</span><span class="qa-q-item-who-points-data">'+element.points+'</span><span class="qa-q-item-who-points-pad"> points)</span>' +
+                                '            </span>' +
+                                '        </span>' +
+                                '        <span class="qa-q-item-when">' +
+                                '            <span class="qa-q-item-when-data">'+date+'</span>' +
+                                '        </span>' +
+                                '    </span>' +
+                                '</span>' +
+                                '<div class="qa-q-item-tags clearfix">' +
+                                '    <ul class="qa-q-item-tag-list">' +tags +
+                                '    </ul>' +
+                                '</div>' +
+                                '</div>' +
+                                '<div class="qa-q-item-clear clearfix">' +
+                                '</div>' +
+                                '</div>';
+                    });
+
+                    $( ".qa-q-list" ).html( html );
+                }
+            });
+        </script>
+
+
+
+
+    </body>
