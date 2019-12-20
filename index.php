@@ -19,6 +19,9 @@ try {
 	exit();
 }
 
+header('Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization');
+header('Content-Type: application/json');
+
 $interactionCode = $json_request['requestHeader']['interactionCode'];
 $serviceId = $json_request['requestHeader']['serviceId'];
 

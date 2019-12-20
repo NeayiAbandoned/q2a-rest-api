@@ -7,7 +7,7 @@
     <title>Triple Performance</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../../../qa-theme/Donut-theme/css/donut.min.css">
+    <link rel="stylesheet" href="http://localhost/neayi/question2answer/qa-theme/Donut-theme/css/donut.min.css">
 
 </head>
 <body>
@@ -50,19 +50,19 @@
                 serviceId: 1
             },
             requestBody: {
-                inquery: 'vigne',
+                inquery: 'vigne, argile',
                 count: 10,
                 userid: 0
             }};
 
-            var rootQ2AURL = 'http://localhost/neayi/question2answer/';
+            var rootQ2AURL = 'https://questions.tripleperformance.fr/';
 
             $.ajax({
                 type: "POST",
                 url: rootQ2AURL + "qa-plugin/api/",
                 data: JSON.stringify(data),
                 dataType: "json",
-                contentType: "application/json",
+                crossDomain: true,
                 success: function( ret )
                 {
                     var html = '';
