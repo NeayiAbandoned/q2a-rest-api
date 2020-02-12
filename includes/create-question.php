@@ -16,8 +16,8 @@
 
 function create_question($json_request){
 
-	require_once Q2ALOCATION.'/qa-include/qa-base.php';
-	require_once Q2ALOCATION.'/qa-include/app/posts.php';
+	require_once QA_INCLUDE_DIR.'qa-base.php';
+	require_once QA_INCLUDE_DIR.'app/posts.php';
 
 	$serviceId	= $json_request['requestHeader']['serviceId'];
 

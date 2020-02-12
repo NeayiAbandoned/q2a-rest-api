@@ -16,11 +16,11 @@
 
 function updateprofile($json_request){
 
-	require_once Q2ALOCATION.'/qa-include/qa-base.php';
-	require_once Q2ALOCATION.'/qa-include/app/users-edit.php';
+	require_once QA_INCLUDE_DIR.'qa-base.php';
+	require_once QA_INCLUDE_DIR.'app/users-edit.php';
 
-	require_once Q2ALOCATION.'/qa-include/db/metas.php';
-	require_once Q2ALOCATION.'/qa-include/db/users.php';
+	require_once QA_INCLUDE_DIR.'db/metas.php';
+	require_once QA_INCLUDE_DIR.'db/users.php';
 
 	$serviceId	= $json_request['requestHeader']['serviceId'];
 	$base64data = $json_request['requestBody']['avatar'];

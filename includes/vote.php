@@ -16,10 +16,10 @@
 
 function vote($json_request){
 
-	require_once Q2ALOCATION.'/qa-include/qa-base.php';
-	require_once Q2ALOCATION.'/qa-include/db/users.php';
-	require_once Q2ALOCATION.'/qa-include/app/cookies.php';
-	require_once Q2ALOCATION.'/qa-include/app/votes.php';
+	require_once QA_INCLUDE_DIR.'qa-base.php';
+	require_once QA_INCLUDE_DIR.'db/users.php';
+	require_once QA_INCLUDE_DIR.'app/cookies.php';
+	require_once QA_INCLUDE_DIR.'app/votes.php';
 
 	$serviceId	= $json_request['requestHeader']['serviceId'];
 

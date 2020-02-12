@@ -18,10 +18,10 @@ function view_profile($json_request){
 
 	include '../connection.php';
 
-	require_once Q2ALOCATION.'/qa-include/qa-base.php';
-	require_once Q2ALOCATION.'/qa-include/db/users.php';
+	require_once QA_INCLUDE_DIR.'qa-base.php';
+	require_once QA_INCLUDE_DIR.'db/users.php';
 
-	require_once Q2ALOCATION.'/qa-include/db/metas.php';
+	require_once QA_INCLUDE_DIR.'db/metas.php';
 
 	$serviceId	= $json_request['requestHeader']['serviceId'];
 	$user_id = $json_request['requestBody']['user_id'];

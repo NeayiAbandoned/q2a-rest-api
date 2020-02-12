@@ -2,7 +2,10 @@
 
 function buildConnection()
 {
-    include_once(__DIR__ . '../../qa-config.php');
+    if (!defined('QA_BASE_DIR'))
+        define('QA_BASE_DIR', Q2ALOCATION . '/');
+
+    include_once(Q2ALOCATION . '/qa-config.php');
 
     //DB Connectivity
     $servername = QA_MYSQL_HOSTNAME;

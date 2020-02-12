@@ -16,8 +16,8 @@
 
 function login($json_request){
 
-	require_once Q2ALOCATION.'/qa-include/qa-base.php';
-	require_once Q2ALOCATION.'/qa-include/app/users.php';
+	require_once QA_INCLUDE_DIR.'qa-base.php';
+	require_once QA_INCLUDE_DIR.'app/users.php';
 	include '../connection.php';
 
 	$serviceId	= $json_request['requestHeader']['serviceId'];

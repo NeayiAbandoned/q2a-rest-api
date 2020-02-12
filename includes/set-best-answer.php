@@ -17,8 +17,8 @@
 function set_best_answer($json_request){
 
 	include '../connection.php';
-	require_once Q2ALOCATION.'/qa-include/qa-base.php';
-	require_once Q2ALOCATION.'/qa-include/app/posts.php';
+	require_once QA_INCLUDE_DIR.'qa-base.php';
+	require_once QA_INCLUDE_DIR.'app/posts.php';
 
 	$serviceId	= $json_request['requestHeader']['serviceId'];
 	$questionid	= $json_request['requestBody']['questionid'];

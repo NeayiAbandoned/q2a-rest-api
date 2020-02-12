@@ -18,10 +18,10 @@
 
 		include '../connection.php';
 
-		require_once Q2ALOCATION.'/qa-include/qa-base.php';
-		require_once Q2ALOCATION.'/qa-include/db/users.php';
-		require_once Q2ALOCATION.'/qa-include/app/cookies.php';
-		require_once Q2ALOCATION.'/qa-include/app/favorites.php';
+		require_once QA_INCLUDE_DIR.'qa-base.php';
+		require_once QA_INCLUDE_DIR.'db/users.php';
+		require_once QA_INCLUDE_DIR.'app/cookies.php';
+		require_once QA_INCLUDE_DIR.'app/favorites.php';
 
 		$serviceId	=	$json_request['requestHeader']['serviceId'];
 		$userid 	=	$json_request['requestBody']['userid'];

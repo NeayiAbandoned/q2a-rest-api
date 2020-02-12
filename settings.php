@@ -1,10 +1,10 @@
 <?php
 
 //Q2A Location on server
-define("Q2ALOCATION", "C:/xampp/htdocs/neayi/question2answer");
+define("Q2ALOCATION", "/var/www/html/questions");
 
 //API LIVE URL
-define("APILIVEURL", "http://localhost/neayi/question2answer/qa-plugin/api/");
+define("APILIVEURL", "http://localhost/questions/qa-plugin/api/");
 
 //Table Prefix
 define("TABLEPREFIX", "qa_");
