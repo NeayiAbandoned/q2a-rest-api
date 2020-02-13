@@ -7,7 +7,8 @@
 //	15th June 2017
 //
 
-include 'settings.php';
+//  "/var/www/html/questions"
+define("Q2ALOCATION", dirname(dirname(dirname($_SERVER["SCRIPT_FILENAME"]))));
 
 //Get JSON Request
 try {

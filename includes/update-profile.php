@@ -38,7 +38,8 @@ function updateprofile($json_request){
 		list(, $base64data)      = explode(',', $base64data);
 		$base64data = base64_decode($base64data);
 		file_put_contents('./avatar/'.$user_id.'.png', $base64data);
-		$image_url = APILIVEURL.'avatar/'.$user_id.'.png';
+		$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		$image_url = $actual_link.'avatar/'.$user_id.'.png';
 
 		//create and update email, avatarurl as a meta value if not pressent. else update it
 		qa_db_usermeta_set($user_id, 'email', $email_id);

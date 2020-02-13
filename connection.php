@@ -13,6 +13,9 @@ function buildConnection()
     $password = QA_MYSQL_PASSWORD;
     $dbname = QA_MYSQL_DATABASE;
 
+    //Table Prefix
+    define("TABLEPREFIX", QA_MYSQL_TABLE_PREFIX);
+
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 

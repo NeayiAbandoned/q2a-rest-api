@@ -40,7 +40,9 @@ function save_image($json_request){
 
 		$message = "Wrote Image";
 		$status = "200";
-		$image_url = APILIVEURL.$folder.'/'.$image_name.'.png';
+
+		$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+		$image_url = $actual_link.$folder.'/'.$image_name.'.png';
 	}else{
 
 		$message = "Image Error";
