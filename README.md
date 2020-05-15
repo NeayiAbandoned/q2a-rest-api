@@ -1,3 +1,12 @@
+This is a fork of https://gitlab.com/arunanson/question2answer-rest-api
+
+At the moment, most functions (API) are commented out, as I didn't use anything else than the SEARCH command. There might be security issues with the rest.
+
+If you wish to use this API, don't forget to set your CORS settings on apache...!
+
+-------
+
+
 Login / Signup / Resigtation API
 ---------------------------------
 
